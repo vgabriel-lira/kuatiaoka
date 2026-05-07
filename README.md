@@ -19,7 +19,7 @@ O projeto foi estruturado seguindo os requisitos acadêmicos, destacando-se:
 * **Encapsulamento:**
 * **Abstração:**
 
-## 🚀 Funcionalidades (Casos de Uso)
+## 🚀 Funcionalidades
 - Cadastro e listagem de itens (Livros, CDs e DVDs).
 - Registro e listagem de usuários (Alunos e Professores).
 - Realização de empréstimos com prazos diferenciados (7 dias para Alunos, 14 para Professores).
