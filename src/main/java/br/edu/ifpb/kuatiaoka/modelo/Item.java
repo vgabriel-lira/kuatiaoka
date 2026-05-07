@@ -1,17 +1,26 @@
 package br.edu.ifpb.kuatiaoka.modelo;
 
+import java.time.LocalDate;
+
 public abstract class Item {
     private String titulo;
     private String editora;
-    private boolean estaEmprestado;
+    // string c status aceitos de: "DISPONIVEL", "EMPRESTADO", "RESERVADO", "MANUTENCAO"
+    private String status; 
+    private LocalDate dataDevolucaoPrevista;
 
     public Item(String titulo, String editora) {
         this.titulo = titulo;
         this.editora = editora;
-        this.estaEmprestado = false;
+        this.status = "DISPONIVEL"; // qlqr coisa nova vai já nascer como disponivel
     }
 
     public String getTitulo() { return titulo; }
-    public boolean isEmprestado() { return estaEmprestado; }
-    public void setEstaEmprestado(boolean status) { this.estaEmprestado = status; }
+    
+    public String getStatus() { return status; }
+    public void setStatus(String status) { this.status = status; }
+
+    // a data nula ate alguem pegar algum livro
+    public LocalDate getDataDevolucaoPrevista() { return dataDevolucaoPrevista; }
+    public void setDataDevolucaoPrevista(LocalDate data) { this.dataDevolucaoPrevista = data; }
 }
