@@ -12,9 +12,12 @@ public class DVD extends Item {
         this.classificacao = classificacao;
     }
 
-    // o prof pedia diretor e duracao pra dvd mas coloquei o super(titulo, editora) pq todo item precisa disso
-
     public String getDiretor() { return diretor; }
     public int getDuracao() { return duracao; }
     public String getClassificacao() { return classificacao; }
+
+    @Override
+    public String toString() {
+        return "DVD: " + getTitulo() + " | Diretor: " + diretor + " | Duração: " + duracao + "min";
+    }
 }
