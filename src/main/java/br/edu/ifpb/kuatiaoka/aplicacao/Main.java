@@ -7,45 +7,48 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        // Criando o sistema e o leitor do teclado
         GerenciadorBiblioteca sistema = new GerenciadorBiblioteca();
         Scanner leitor = new Scanner(System.in);
         
-        // aqui cadastrar um livro e um aluno de teste para não abrir vazio
-        Aluno alunoTeste = new Aluno("Seu Nome", "202401");
-        Livro livroTeste = new Livro("Java para Iniciantes", "Editora IFPB", 2024, "978-123");
+        // Criei um aluno e um livro de teste aqui so pra gente ver se agr funciona
+        Aluno aluno = new Aluno("Joao Silva", "20241001");
+        Livro livro = new Livro("Java: Como Programar", "Pearson", 2024, "ISBN-12345");
         
-        sistema.registrarPessoa(alunoTeste);
-        sistema.cadastrarNovoItem(livroTeste);
+        // Colocando eles pra dentro do sistema
+        sistema.registrarPessoa(aluno);
+        sistema.cadastrarNovoItem(livro);
 
-        int escolha = 0;
+        int opcao = 0;
 
-        // O loop que segura o programa aberto até escolher sair
-        while (escolha != 3) {
-            System.out.println("\n--- SISTEMA BIBLIOTECA KUATIAOKA ---");
-            System.out.println("1. Olhar prateleira");
-            System.out.println("2. Pegar livro emprestado (Teste)");
-            System.out.println("3. Sair do programa");
-            System.out.print("O que deseja fazer? ");
+        // Esse loop segura o menu aberto ate a gente digitar 4 pra sair
+        while (opcao != 4) {
+            System.out.println("\n===== SISTEMA DA BIBLIOTECA =====");
+            System.out.println("1. Listar tudo");
+            System.out.println("2. Pegar emprestado");
+            System.out.println("3. Devolver");
+            System.out.println("4. Sair");
+            System.out.print("O que quer fazer? ");
             
-            escolha = leitor.nextInt();
-            leitor.nextLine(); // Limpa o enter que sobra no teclado
+            opcao = leitor.nextInt();
 
-            if (escolha == 1) {
+            // Fiz com if/else pra ficar mais simples de entender
+            if (opcao == 1) {
                 sistema.mostrarTudo();
             } 
-            else if (escolha == 2) {
-                // Aqui a gente testa a lógica que ta no Gerenciador
-                sistema.fazerEmprestimo(alunoTeste, livroTeste);
+            else if (opcao == 2) {
+                sistema.fazerEmprestimo(aluno, livro);
             } 
-            else if (escolha == 3) {
-                System.out.println("Valeu! Encerrando o sistema...");
+            else if (opcao == 3) {
+                sistema.devolverItem(aluno, livro);
+            } 
+            else if (opcao == 4) {
+                System.out.println("Fechando o programa...");
             } 
             else {
-                System.out.println("Opção inválida, tenta de novo!");
+                System.out.println("Opcao errada, tenta de novo!");
             }
         }
         
-        leitor.close(); // Fecha o teclado pra economizar memória
+        leitor.close();
     }
 }
