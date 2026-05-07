@@ -3,23 +3,27 @@ package br.edu.ifpb.kuatiaoka.modelo;
 public class Livro extends Item {
     private String isbn;
     private String autor;
-    private int anoPublicacao;
+    private int ano;
     private int edicao;
     private String genero;
-    private int numPaginas;
+    private int paginas;
     private String sinopse;
 
     public Livro(String titulo, String editora, String isbn, String autor, int ano, int edicao, String genero, int paginas, String sinopse) {
-        super(titulo, editora);
+        super(titulo, editora); // Passa apenas o basico para a classe pai
         this.isbn = isbn;
         this.autor = autor;
-        this.anoPublicacao = ano;
+        this.ano = ano;
         this.edicao = edicao;
         this.genero = genero;
-        this.numPaginas = paginas;
+        this.paginas = paginas;
         this.sinopse = sinopse;
     }
-    
-    // getters se precisar mostrar os detalhes depois
+
     public String getIsbn() { return isbn; }
+    
+    @Override
+    public String toString() {
+        return "Livro: " + getTitulo() + " | Autor: " + autor + " | ISBN: " + isbn;
+    }
 }

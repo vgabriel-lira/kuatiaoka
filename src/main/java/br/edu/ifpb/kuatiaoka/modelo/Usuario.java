@@ -5,7 +5,7 @@ public abstract class Usuario {
     private String matricula;
     private int maxLivros;
     private int livrosAtuais;
-    private double saldoMulta; 
+    private double saldoMulta;
     private String statusMulta;
 
     public Usuario(String nome, String matricula, int maxLivros) {
@@ -17,18 +17,17 @@ public abstract class Usuario {
         this.statusMulta = "NENHUMA";
     }
 
-    // esses dois aqui como abstratos pq cada tipo de usuario vai ter seu proprio prazo e valor de multa
     public abstract int getPrazoParaItem(Item item);
     public abstract double getValorMultaDiaria();
 
-    // aqui os getters e setters  
-    public String getStatusMulta() { return statusMulta; }
-    public void setStatusMulta(String statusMulta) { this.statusMulta = statusMulta; }
-    public double getSaldoMulta() { return saldoMulta; }
-    public void setSaldoMulta(double saldoMulta) { this.saldoMulta = saldoMulta; }
-    public String getMatricula() {return matricula; }
+    // GETTERS NECESSÁRIOS
     public String getNome() { return nome; }
+    public String getMatricula() { return matricula; }
     public int getMaxLivros() { return maxLivros; }
     public int getLivrosAtuais() { return livrosAtuais; }
-    public void setLivrosAtuais(int livrosAtuais) { this.livrosAtuais = livrosAtuais; }
+    public void setLivrosAtuais(int n) { this.livrosAtuais = n; }
+    public String getStatusMulta() { return statusMulta; }
+    public void setStatusMulta(String s) { this.statusMulta = s; }
+    public double getSaldoMulta() { return saldoMulta; }
+    public void setSaldoMulta(double v) { this.saldoMulta = v; }
 }
