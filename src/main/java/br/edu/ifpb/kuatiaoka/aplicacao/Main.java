@@ -12,7 +12,7 @@ public class Main {
         
         // Criei um aluno e um livro de teste aqui so pra gente ver se agr funciona
         Aluno aluno = new Aluno("Joao Silva", "20241001");
-        Livro livro = new Livro("Java: Como Programar", "Pearson", 2024, "ISBN-12345");
+        Livro livro = new Livro("Java: Como Programar", "Pearson", "978-123", "Deitel", 2024, 10, "Educativo", 900, "Um livro que ensina java");
         
         // Colocando eles pra dentro do sistema
         sistema.registrarPessoa(aluno);
@@ -31,7 +31,7 @@ public class Main {
             
             opcao = leitor.nextInt();
 
-            // Fiz com if/else pra ficar mais simples de entender
+            // fiz if e else msm pra ficar mais simples de entender
             if (opcao == 1) {
                 sistema.mostrarTudo();
             } 

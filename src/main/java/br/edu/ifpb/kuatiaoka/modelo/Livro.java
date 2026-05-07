@@ -1,16 +1,25 @@
 package br.edu.ifpb.kuatiaoka.modelo;
 
-// aqui o livro vai herdar tudo q o Item tem (titulo, ano, e etc)
 public class Livro extends Item {
-    private String codigoIsbn;
+    private String isbn;
+    private String autor;
+    private int anoPublicacao;
+    private int edicao;
+    private String genero;
+    private int numPaginas;
+    private String sinopse;
 
-    public Livro(String titulo, String editora, int ano, String codigoIsbn) {
-        // aqui o super envia as informações lá pra classe Item organizar
-        super(titulo, editora, ano);
-        this.codigoIsbn = codigoIsbn;
+    public Livro(String titulo, String editora, String isbn, String autor, int ano, int edicao, String genero, int paginas, String sinopse) {
+        super(titulo, editora);
+        this.isbn = isbn;
+        this.autor = autor;
+        this.anoPublicacao = ano;
+        this.edicao = edicao;
+        this.genero = genero;
+        this.numPaginas = paginas;
+        this.sinopse = sinopse;
     }
-
-    public String getCodigoIsbn() {
-        return codigoIsbn;
-    }
+    
+    // getters se precisar mostrar os detalhes depois
+    public String getIsbn() { return isbn; }
 }
