@@ -1,17 +1,24 @@
 package br.edu.ifpb.kuatiaoka.modelo;
 
-public class CD extends Item {
-    private String artista;
-    private String listaFaixas;
+import java.util.List;
 
-    public CD(String titulo, String editora, String artista, String listaFaixas) {
+public class CD extends Item {
+    
+    // ========== ATRIBUTOS ==========
+    private String artista;
+    private List<String> listaFaixas;
+    
+    // ========== CONSTRUTOR ==========
+    public CD(String titulo, String editora, String artista, List<String> listaFaixas) {
         super(titulo, editora);
         this.artista = artista;
         this.listaFaixas = listaFaixas;
     }
-
-    // pro cd pedia artista e lista de musicas. coloquei a lista como String msm pra gente n se complicar com arrays agora
-
-    public String getArtista() { return artista; }
-    public String getListaFaixas() { return listaFaixas; }
+    
+    // ========== MÉTODOS ==========
+    
+    @Override
+    public String toString() {
+        return "CD: " + getTitulo() + " | Artista: " + artista + " | Faixas: " + listaFaixas.size();
+    }
 }
